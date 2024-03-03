@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "9920234417",
+    "project_id": "sealed-8fcd7",
+    "storage_bucket": "sealed-8fcd7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9920234417:android:f005073961021b88ca7390",
+        "android_client_info": {
+          "package_name": "com.liam.sealed"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEofZCGF05WDqe03QEq18ahRvR0IwMUfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
