@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Sealed"
         tools:targetApi="31">
         <activity
+            android:name=".setting"
+            android:exported="false" />
+        <activity
+            android:name=".chatwindo"
+            android:exported="false" />
+        <activity
             android:name=".registration"
             android:exported="false" />
         <activity
