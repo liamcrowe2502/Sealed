@@ -73,5 +73,34 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+        imglogout = findViewById(R.id.logoutimg);
+
+        imglogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog dialog = new Dialog(MainActivity.this,R.style.dialoge);
+                dialog.setContentView(R.layout.dialog_layout);
+                Button no,yes;
+                yes = dialog.findViewById(R.id.yesbnt);
+                no = dialog.findViewById(R.id.nobnt);
+                yes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        FirebaseAuth.getInstance().signOut();
+                        Intent intent = new Intent(MainActivity.this,login.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+                no.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+            }
+        });
+
     }
 }
