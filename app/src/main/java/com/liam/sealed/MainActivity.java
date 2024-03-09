@@ -1,6 +1,7 @@
 package com.liam.sealed;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,9 +39,12 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
         }
+
         database=FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
         cumbut = findViewById(R.id.camBut);
@@ -72,7 +76,6 @@ public class MainActivity extends AppCompatActivity{
 
             }
         });
-
         imglogout = findViewById(R.id.logoutimg);
 
         imglogout.setOnClickListener(new View.OnClickListener() {
@@ -101,6 +104,27 @@ public class MainActivity extends AppCompatActivity{
                 dialog.show();
             }
         });
+
+        setbut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, setting.class);
+                startActivity(intent);
+            }
+        });
+
+        cumbut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent,10);
+            }
+        });
+
+        if (auth.getCurrentUser() == null){
+            Intent intent = new Intent(MainActivity.this,login.class);
+            startActivity(intent);
+        }
 
     }
 }
