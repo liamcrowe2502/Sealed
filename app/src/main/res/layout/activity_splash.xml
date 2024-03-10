@@ -25,7 +25,7 @@
         android:layout_height="@dimen/_103sdp"
         android:fontFamily="@font/apptext"
         android:gravity="center"
-        android:text="A.VMessenger"
+        android:text="Sealed"
         android:textColor="@color/black"
         android:textSize="@dimen/_30sdp"
         app:layout_constraintBottom_toBottomOf="parent"
