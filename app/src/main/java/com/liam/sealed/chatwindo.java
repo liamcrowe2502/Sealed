@@ -52,13 +52,10 @@ public class chatwindo extends AppCompatActivity {
         }
         database = FirebaseDatabase.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
-
         reciverName = getIntent().getStringExtra("nameeee");
         reciverimg = getIntent().getStringExtra("reciverImg");
         reciverUid = getIntent().getStringExtra("uid");
-
         messagesArrayList = new ArrayList<>();
-
         sendbtn = findViewById(R.id.sendbtnn);
         textmsg = findViewById(R.id.textmsg);
         reciverNName = findViewById(R.id.recivername);
@@ -69,21 +66,14 @@ public class chatwindo extends AppCompatActivity {
         messageAdpter.setLayoutManager(linearLayoutManager);
         mmessagesAdpter = new messagesAdpter(chatwindo.this,messagesArrayList);
         messageAdpter.setAdapter(mmessagesAdpter);
-
-
         Picasso.get().load(reciverimg).into(profile);
         reciverNName.setText(""+reciverName);
-
         SenderUID =  firebaseAuth.getUid();
-
         senderRoom = SenderUID+reciverUid;
         reciverRoom = reciverUid+SenderUID;
 
-
-
         DatabaseReference  reference = database.getReference().child("user").child(firebaseAuth.getUid());
         DatabaseReference  chatreference = database.getReference().child("chats").child(senderRoom).child("messages");
-
 
         chatreference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -146,6 +136,5 @@ public class chatwindo extends AppCompatActivity {
                         });
             }
         });
-
     }
 }
