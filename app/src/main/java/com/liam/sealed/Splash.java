@@ -14,7 +14,7 @@ import android.widget.TextView;
 public class Splash extends AppCompatActivity {
 
     ImageView logo;
-    TextView name, own1, own2;
+    TextView own1, own2;
     Animation topAnim, bottomAnim;
 
     @Override
@@ -28,7 +28,6 @@ public class Splash extends AppCompatActivity {
         }
 
         logo = findViewById(R.id.logoimg);
-        name = findViewById(R.id.logonameimg);
         own1 = findViewById(R.id.ownone);
         own2 = findViewById(R.id.owntwo);
 
@@ -36,7 +35,6 @@ public class Splash extends AppCompatActivity {
         bottomAnim = AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
 
         logo.setAnimation(topAnim);
-        name.setAnimation(bottomAnim);
         own1.setAnimation(bottomAnim);
         own2.setAnimation(bottomAnim);
 
