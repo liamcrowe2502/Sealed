@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/one"
     tools:context=".login">
 
     <ImageView
@@ -34,23 +33,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.415" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="310dp"
-        android:layout_height="41dp"
-        android:fontFamily="@font/poppins_regular"
-        android:gravity="center"
-        android:text="Sign in to continue."
-        android:textColor="@color/black"
-        android:textSize="@dimen/_14sdp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.514" />
 
     <TextView
         android:id="@+id/textView7"

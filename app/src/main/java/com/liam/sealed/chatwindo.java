@@ -6,9 +6,11 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,6 +45,7 @@ public class chatwindo extends AppCompatActivity {
     RecyclerView messageAdpter;
     ArrayList<msgModelclass> messagesArrayList;
     messagesAdpter mmessagesAdpter;
+    ImageView backButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,10 +74,20 @@ public class chatwindo extends AppCompatActivity {
         SenderUID =  firebaseAuth.getUid();
         senderRoom = SenderUID+reciverUid;
         reciverRoom = reciverUid+SenderUID;
+        backButton = findViewById(R.id.backButton);
 
         DatabaseReference  reference = database.getReference().child("user").child(firebaseAuth.getUid());
         DatabaseReference  chatreference = database.getReference().child("chats").child(senderRoom).child("messages");
 
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Start MainActivity
+                Intent intent = new Intent(chatwindo.this, MainActivity.class);
+                startActivity(intent);
+                finish(); // Optional: finish current activity to prevent coming back to it with back button
+            }
+        });
         chatreference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -108,6 +121,7 @@ public class chatwindo extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String message = textmsg.getText().toString();
+
                 if (message.isEmpty()){
                     Toast.makeText(chatwindo.this, "Enter The Message First", Toast.LENGTH_SHORT).show();
                     return;

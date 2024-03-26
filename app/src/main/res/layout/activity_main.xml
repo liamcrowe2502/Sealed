@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainback"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -49,20 +48,20 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mainUserRecyclerView"
-        android:layout_width="376dp"
-        android:layout_height="380dp"
+        android:layout_width="362dp"
+        android:layout_height="573dp"
         android:layout_below="@id/toolBar"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="167dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginRight="19dp"
-        android:layout_marginBottom="104dp" />
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginBottom="72dp" />
 
     <ImageView
         android:id="@+id/camBut"
@@ -71,9 +70,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="232dp"
-        android:layout_marginRight="232dp"
-        android:layout_marginBottom="37dp"
+        android:layout_marginEnd="343dp"
+        android:layout_marginRight="343dp"
+        android:layout_marginBottom="16dp"
         android:src="@drawable/camera" />
 
     <ImageView
@@ -82,9 +81,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="176dp"
-        android:layout_marginRight="176dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="280dp"
+        android:layout_marginRight="280dp"
+        android:layout_marginBottom="13dp"
         android:src="@drawable/chat" />
 
     <ImageView
@@ -94,9 +93,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="104dp"
-        android:layout_marginRight="104dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="217dp"
+        android:layout_marginRight="217dp"
+        android:layout_marginBottom="13dp"
         android:src="@drawable/sett" />
 
 </RelativeLayout>

@@ -4,39 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/chatback"
+    android:background="@color/black"
     tools:context=".chatwindo">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
+        android:background="@color/grey"
         android:id="@+id/ll1"
         android:gravity="center">
 
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="91dp"
+            android:layout_height="59dp"
+            android:layout_margin="@dimen/_10sdp"
+            android:clickable="true"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/backbut" />
+
+        <TextView
+            android:id="@+id/recivername"
+            android:layout_width="126dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:text="name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp" />
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profileimgg"
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_80sdp"
+            android:layout_width="86dp"
+            android:layout_height="79dp"
+            android:layout_marginTop="@dimen/_7sdp"
             android:src="@drawable/photocamera"
             app:civ_border_color="@color/white"
-            android:layout_marginTop="@dimen/_7sdp"
             app:civ_border_width="@dimen/_2sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.226" />
-
-        <TextView
-            android:id="@+id/recivername"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ayushvishwakarma"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:fontFamily="@font/poppins_regular"
-            android:textSize="@dimen/_15sdp"
-            android:layout_margin="@dimen/_10sdp"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -72,13 +83,13 @@
 
             <EditText
                 android:id="@+id/textmsg"
-                android:layout_width="338dp"
+                android:layout_width="384dp"
                 android:layout_height="45dp"
-                android:layout_marginLeft="@dimen/_20sdp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_20sdp"
                 android:background="@null"
                 android:fontFamily="@font/poppins_regular"
-                android:hint="Type The Messages..."
+                android:hint="Text Message"
                 android:paddingStart="13.00dp" />
 
         </androidx.cardview.widget.CardView>
@@ -93,8 +104,8 @@
             app:cardCornerRadius="@dimen/_25sdp">
 
             <ImageView
-                android:layout_width="@dimen/_15sdp"
-                android:layout_height="@dimen/_15sdp"
+                android:layout_width="31dp"
+                android:layout_height="27dp"
                 android:layout_gravity="center"
                 android:background="@drawable/sendbut" />
 
