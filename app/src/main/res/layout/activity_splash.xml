@@ -41,7 +41,7 @@
         android:layout_height="@dimen/_25sdp"
         android:fontFamily="@font/spartan_thin"
         android:gravity="center"
-        android:text="TechCoder A.V"
+        android:text="Liam Crowe"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
