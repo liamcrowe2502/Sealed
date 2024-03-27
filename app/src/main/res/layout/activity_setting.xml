@@ -4,7 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/settingback"
     tools:context=".setting">
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="130dp"
+        android:layout_height="85dp"
+        android:layout_margin="@dimen/_10sdp"
+        android:clickable="true"
+        android:padding="@dimen/_10sdp"
+        android:src="@drawable/backbut"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp" />
 
     <ImageView
         android:id="@+id/settingprofile"
@@ -24,7 +38,7 @@
         android:layout_marginTop="216dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="Username"
         app:layout_constraintBottom_toTopOf="@+id/settingstatus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -38,7 +52,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="name"
+        android:text="Status"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -48,16 +62,45 @@
 
     <Button
         android:id="@+id/donebutt"
-        android:backgroundTint="@color/black"
         android:layout_width="@dimen/_100sdp"
         android:layout_height="@dimen/_35sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:text="Save"
         app:cornerRadius="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/camBut"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.798" />
+        app:layout_constraintTop_toBottomOf="@+id/settingstatus" />
+
+    <ImageView
+        android:id="@+id/camBut"
+        android:layout_width="47dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="56dp"
+        android:src="@drawable/camera"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/chat" />
+
+    <ImageView
+        android:id="@+id/chat"
+        android:layout_width="58dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="44dp"
+        android:src="@drawable/chat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/settingBut" />
+
+    <ImageView
+        android:id="@+id/settingBut"
+        android:layout_width="56dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="44dp"
+        android:src="@drawable/sett"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

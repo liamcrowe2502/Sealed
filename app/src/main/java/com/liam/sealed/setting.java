@@ -42,6 +42,8 @@ public class setting extends AppCompatActivity {
     Uri setImageUri;
     String email,password;
     ProgressDialog progressDialog;
+    ImageView backButton;
+    ImageView cumbut,setbut;
 
 
 
@@ -61,6 +63,9 @@ public class setting extends AppCompatActivity {
         setname = findViewById(R.id.settingname);
         setstatus = findViewById(R.id.settingstatus);
         donebut = findViewById(R.id.donebutt);
+        backButton = findViewById(R.id.backButton);
+        setbut = findViewById(R.id.settingBut);
+        cumbut = findViewById(R.id.camBut);
 
         progressDialog = new ProgressDialog(this) ;
         progressDialog.setMessage("Saing...");
@@ -68,6 +73,32 @@ public class setting extends AppCompatActivity {
 
         DatabaseReference reference = database.getReference().child("user").child(auth.getUid());
         StorageReference storageReference = storage.getReference().child("upload").child(auth.getUid());
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Start MainActivity
+                Intent intent = new Intent(setting.this, MainActivity.class);
+                startActivity(intent);
+                finish(); // Optional: finish current activity to prevent coming back to it with back button
+            }
+        });
+
+        setbut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(setting.this, setting.class);
+                startActivity(intent);
+            }
+        });
+
+        cumbut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent,10);
+            }
+        });
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
