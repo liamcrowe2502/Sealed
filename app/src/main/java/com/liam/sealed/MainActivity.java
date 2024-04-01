@@ -31,8 +31,7 @@ public class MainActivity extends AppCompatActivity{
     UserAdpter  adapter;
     FirebaseDatabase database;
     ArrayList<Users> usersArrayList;
-    ImageView imglogout;
-    ImageView cumbut,setbut;
+    ImageView imglogout, setbut;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -47,7 +46,6 @@ public class MainActivity extends AppCompatActivity{
 
         database=FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
-        cumbut = findViewById(R.id.camBut);
         setbut = findViewById(R.id.settingBut);
 
         DatabaseReference reference = database.getReference().child("user");
@@ -110,14 +108,6 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, setting.class);
                 startActivity(intent);
-            }
-        });
-
-        cumbut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent,10);
             }
         });
 

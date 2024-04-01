@@ -65,18 +65,6 @@
         android:layout_marginBottom="105dp" />
 
     <ImageView
-        android:id="@+id/camBut"
-        android:layout_width="47dp"
-        android:layout_height="38dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="296dp"
-        android:layout_marginRight="296dp"
-        android:layout_marginBottom="52dp"
-        android:src="@drawable/camera" />
-
-    <ImageView
         android:layout_width="58dp"
         android:layout_height="57dp"
         android:layout_alignParentEnd="true"

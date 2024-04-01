@@ -42,8 +42,7 @@ public class setting extends AppCompatActivity {
     Uri setImageUri;
     String email,password;
     ProgressDialog progressDialog;
-    ImageView backButton;
-    ImageView cumbut,setbut;
+    ImageView backButton, setbut;
 
 
 
@@ -65,7 +64,6 @@ public class setting extends AppCompatActivity {
         donebut = findViewById(R.id.donebutt);
         backButton = findViewById(R.id.backButton);
         setbut = findViewById(R.id.settingBut);
-        cumbut = findViewById(R.id.camBut);
 
         progressDialog = new ProgressDialog(this) ;
         progressDialog.setMessage("Saing...");
@@ -92,13 +90,6 @@ public class setting extends AppCompatActivity {
             }
         });
 
-        cumbut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent,10);
-            }
-        });
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
