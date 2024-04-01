@@ -37,6 +37,7 @@ public class UserAdpter extends RecyclerView.Adapter<UserAdpter.viewholder> {
 
         Users users = usersArrayList.get(position);
 
+        //Bug 1
         if(FirebaseAuth.getInstance().getCurrentUser().getUid().equals(users.getUserId())) {
             holder.itemView.setVisibility(View.GONE);
         }
