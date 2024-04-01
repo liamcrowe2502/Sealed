@@ -77,8 +77,8 @@
         android:id="@+id/camBut"
         android:layout_width="47dp"
         android:layout_height="38dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="60dp"
         android:src="@drawable/camera"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/chat" />
@@ -92,6 +92,16 @@
         android:src="@drawable/chat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/settingBut" />
+
+    <ImageView
+        android:id="@+id/phone"
+        android:layout_width="58dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="44dp"
+        android:src="@drawable/phone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/chat" />
 
     <ImageView
         android:id="@+id/settingBut"
