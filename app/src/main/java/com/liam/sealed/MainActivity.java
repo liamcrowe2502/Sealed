@@ -10,7 +10,6 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity{
     UserAdpter  adapter;
     FirebaseDatabase database;
     ArrayList<Users> usersArrayList;
-    ImageView imglogout, setbut;
+    ImageView imglogout, setbut, chatBut;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -47,6 +46,7 @@ public class MainActivity extends AppCompatActivity{
         database=FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
         setbut = findViewById(R.id.settingBut);
+        chatBut = findViewById(R.id.chatBut);
 
         DatabaseReference reference = database.getReference().child("user");
 
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity{
                     @Override
                     public void onClick(View v) {
                         FirebaseAuth.getInstance().signOut();
-                        Intent intent = new Intent(MainActivity.this,login.class);
+                        Intent intent = new Intent(MainActivity.this, Login.class);
                         startActivity(intent);
                         finish();
                     }
@@ -102,17 +102,25 @@ public class MainActivity extends AppCompatActivity{
                 dialog.show();
             }
         });
+        chatBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Perform action when chat button is clicked
+                Intent intent = new Intent(MainActivity.this, MainActivity.class); // Change ChatActivity to your desired activity
+                startActivity(intent);
+            }
+        });
 
         setbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, setting.class);
+                Intent intent = new Intent(MainActivity.this, Setting.class);
                 startActivity(intent);
             }
         });
 
         if (auth.getCurrentUser() == null){
-            Intent intent = new Intent(MainActivity.this,login.class);
+            Intent intent = new Intent(MainActivity.this, Login.class);
             startActivity(intent);
         }
 

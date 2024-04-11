@@ -13,19 +13,19 @@
         android:theme="@style/Theme.Sealed"
         tools:targetApi="31">
         <activity
-            android:name=".setting"
+            android:name=".Setting"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".chatwindo"
+            android:name=".chatWindows.chatWindow"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".registration"
+            android:name=".Registration"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".login"
+            android:name=".Login"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity

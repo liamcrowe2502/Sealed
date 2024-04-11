@@ -5,7 +5,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -13,7 +12,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -26,13 +24,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.database.util.GAuthToken;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
-public class setting extends AppCompatActivity {
+public class Setting extends AppCompatActivity {
     ImageView setprofile;
     EditText setname, setstatus;
     Button donebut;
@@ -42,7 +39,7 @@ public class setting extends AppCompatActivity {
     Uri setImageUri;
     String email,password;
     ProgressDialog progressDialog;
-    ImageView backButton, setbut;
+    ImageView backButton, setbut, chatBut;
 
 
 
@@ -64,6 +61,7 @@ public class setting extends AppCompatActivity {
         donebut = findViewById(R.id.donebutt);
         backButton = findViewById(R.id.backButton);
         setbut = findViewById(R.id.settingBut);
+        chatBut = findViewById(R.id.chatBut);
 
         progressDialog = new ProgressDialog(this) ;
         progressDialog.setMessage("Saing...");
@@ -76,16 +74,24 @@ public class setting extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Start MainActivity
-                Intent intent = new Intent(setting.this, MainActivity.class);
+                Intent intent = new Intent(Setting.this, MainActivity.class);
                 startActivity(intent);
                 finish(); // Optional: finish current activity to prevent coming back to it with back button
+            }
+        });
+        chatBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Perform action when chat button is clicked
+                Intent intent = new Intent(Setting.this, MainActivity.class); // Change ChatActivity to your desired activity
+                startActivity(intent);
             }
         });
 
         setbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(setting.this, setting.class);
+                Intent intent = new Intent(Setting.this, Setting.class);
                 startActivity(intent);
             }
         });
@@ -139,13 +145,13 @@ public class setting extends AppCompatActivity {
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()){
                                                 progressDialog.dismiss();
-                                                Toast.makeText(setting.this, "Data Is save ", Toast.LENGTH_SHORT).show();
-                                                Intent intent = new Intent(setting.this,MainActivity.class);
+                                                Toast.makeText(Setting.this, "Data Is save ", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent(Setting.this,MainActivity.class);
                                                 startActivity(intent);
                                                 finish();
                                             }else {
                                                 progressDialog.dismiss();
-                                                Toast.makeText(setting.this, "Some thing went romg", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(Setting.this, "Some thing went romg", Toast.LENGTH_SHORT).show();
                                             }
                                         }
                                     });
@@ -164,13 +170,13 @@ public class setting extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
                                         progressDialog.dismiss();
-                                        Toast.makeText(setting.this, "Data Is save ", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(setting.this,MainActivity.class);
+                                        Toast.makeText(Setting.this, "Data Is save ", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(Setting.this,MainActivity.class);
                                         startActivity(intent);
                                         finish();
                                     }else {
                                         progressDialog.dismiss();
-                                        Toast.makeText(setting.this, "Some thing went romg", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(Setting.this, "Some thing went romg", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });

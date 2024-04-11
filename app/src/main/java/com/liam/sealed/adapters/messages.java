@@ -1,7 +1,7 @@
-package com.liam.sealed;
+package com.liam.sealed.adapters;
 
-import static com.liam.sealed.chatwindo.reciverIImg;
-import static com.liam.sealed.chatwindo.senderImg;
+import static com.liam.sealed.chatWindows.chatWindow.reciverIImg;
+import static com.liam.sealed.chatWindows.chatWindow.senderImg;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -15,19 +15,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.liam.sealed.R;
+import com.liam.sealed.modelClass.message;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class messagesAdpter extends RecyclerView.Adapter {
+public class messages extends RecyclerView.Adapter {
     Context context;
-    ArrayList<msgModelclass> messagesAdpterArrayList;
+    ArrayList<message> messagesAdpterArrayList;
     int ITEM_SEND=1;
     int ITEM_RECIVE=2;
 
-    public messagesAdpter(Context context, ArrayList<msgModelclass> messagesAdpterArrayList) {
+    public messages(Context context, ArrayList<message> messagesAdpterArrayList) {
         this.context = context;
         this.messagesAdpterArrayList = messagesAdpterArrayList;
     }
@@ -46,7 +48,7 @@ public class messagesAdpter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        msgModelclass messages = messagesAdpterArrayList.get(position);
+        message messages = messagesAdpterArrayList.get(position);
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -84,7 +86,7 @@ public class messagesAdpter extends RecyclerView.Adapter {
 
     @Override
     public int getItemViewType(int position) {
-        msgModelclass messages = messagesAdpterArrayList.get(position);
+        message messages = messagesAdpterArrayList.get(position);
         if (FirebaseAuth.getInstance().getCurrentUser().getUid().equals(messages.getSenderid())) {
             return ITEM_SEND;
         } else {

@@ -29,7 +29,7 @@ import com.google.firebase.storage.UploadTask;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
-public class registration extends AppCompatActivity {
+public class Registration extends AppCompatActivity {
     TextView loginbut;
     EditText rg_username, rg_email , rg_password, rg_repassword;
     Button rg_signup;
@@ -67,7 +67,7 @@ public class registration extends AppCompatActivity {
         loginbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(registration.this,login.class);
+                Intent intent = new Intent(Registration.this, Login.class);
                 startActivity(intent);
                 finish();
             }
@@ -80,15 +80,15 @@ public class registration extends AppCompatActivity {
                 String emaill = rg_email.getText().toString();
                 String Password = rg_password.getText().toString();
                 String cPassword = rg_repassword.getText().toString();
-                String status = "Hey I'm Using This Application";
+                String status = "Hey I'm New";
 
                 if (TextUtils.isEmpty(namee) || TextUtils.isEmpty(emaill) ||
                         TextUtils.isEmpty(Password) || TextUtils.isEmpty(cPassword)){
                     progressDialog.dismiss();
-                    Toast.makeText(registration.this, "Please Enter Valid Information", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Registration.this, "Please Enter Valid Information", Toast.LENGTH_SHORT).show();
                 }else  if (!emaill.matches(emailPattern)){
                     progressDialog.dismiss();
-                    rg_email.setError("Type A Valid Email Here");
+                    rg_email.setError("Email not valid");
                 }else if (Password.length()<6){
                     progressDialog.dismiss();
                     rg_password.setError("Password Must Be 6 Characters Or More");
@@ -119,11 +119,11 @@ public class registration extends AppCompatActivity {
                                                             public void onComplete(@NonNull Task<Void> task) {
                                                                 if (task.isSuccessful()){
                                                                     progressDialog.show();
-                                                                    Intent intent = new Intent(registration.this,MainActivity.class);
+                                                                    Intent intent = new Intent(Registration.this,MainActivity.class);
                                                                     startActivity(intent);
                                                                     finish();
                                                                 }else {
-                                                                    Toast.makeText(registration.this, "Error in creating the user", Toast.LENGTH_SHORT).show();
+                                                                    Toast.makeText(Registration.this, "Error in creating the user", Toast.LENGTH_SHORT).show();
                                                                 }
                                                             }
                                                         });
@@ -141,17 +141,17 @@ public class registration extends AppCompatActivity {
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()){
                                                 progressDialog.show();
-                                                Intent intent = new Intent(registration.this,MainActivity.class);
+                                                Intent intent = new Intent(Registration.this,MainActivity.class);
                                                 startActivity(intent);
                                                 finish();
                                             }else {
-                                                Toast.makeText(registration.this, "Error in creating the user", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(Registration.this, "Error in creating the user", Toast.LENGTH_SHORT).show();
                                             }
                                         }
                                     });
                                 }
                             }else {
-                                Toast.makeText(registration.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Registration.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
