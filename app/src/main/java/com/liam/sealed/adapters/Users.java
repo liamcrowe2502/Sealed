@@ -1,4 +1,4 @@
-package com.liam.sealed;
+package com.liam.sealed.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,32 +11,35 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.liam.sealed.R;
 import com.liam.sealed.chatWindows.chatWindow;
+import com.liam.sealed.main.MainActivity;
+import com.liam.sealed.modelClass.User;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class UserAdpter extends RecyclerView.Adapter<UserAdpter.viewholder> {
+public class Users extends RecyclerView.Adapter<Users.viewholder> {
     Context mainActivity;
-    ArrayList<Users> usersArrayList;
-    public UserAdpter(MainActivity mainActivity, ArrayList<Users> usersArrayList) {
+    ArrayList<User> usersArrayList;
+    public Users(MainActivity mainActivity, ArrayList<User> usersArrayList) {
         this.mainActivity=mainActivity;
         this.usersArrayList=usersArrayList;
     }
 
     @NonNull
     @Override
-    public UserAdpter.viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public Users.viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mainActivity).inflate(R.layout.user_item,parent,false);
         return new viewholder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull UserAdpter.viewholder holder, int position) {
+    public void onBindViewHolder(@NonNull Users.viewholder holder, int position) {
 
-        Users users = usersArrayList.get(position);
+        User users = usersArrayList.get(position);
 
         //Bug 1
         if(FirebaseAuth.getInstance().getCurrentUser().getUid().equals(users.getUserId())) {

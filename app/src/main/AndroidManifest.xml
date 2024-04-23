@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Sealed"
         tools:targetApi="31">
         <activity
-            android:name=".Setting"
+            android:name=".main.Setting"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
@@ -21,11 +21,11 @@
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".Registration"
+            android:name=".main.Registration"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".main.Login"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
@@ -41,7 +41,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".main.MainActivity"
             android:screenOrientation="portrait"
             android:exported="false">
 

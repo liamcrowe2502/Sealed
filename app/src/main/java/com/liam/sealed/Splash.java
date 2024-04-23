@@ -11,6 +11,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.liam.sealed.main.Registration;
+
 public class Splash extends AppCompatActivity {
 
     ImageView logo;

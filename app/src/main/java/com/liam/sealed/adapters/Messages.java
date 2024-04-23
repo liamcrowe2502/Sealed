@@ -16,20 +16,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.liam.sealed.R;
-import com.liam.sealed.modelClass.message;
+import com.liam.sealed.modelClass.Message;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class messages extends RecyclerView.Adapter {
+public class Messages extends RecyclerView.Adapter {
     Context context;
-    ArrayList<message> messagesAdpterArrayList;
+    ArrayList<Message> messagesAdpterArrayList;
     int ITEM_SEND=1;
     int ITEM_RECIVE=2;
 
-    public messages(Context context, ArrayList<message> messagesAdpterArrayList) {
+    public Messages(Context context, ArrayList<Message> messagesAdpterArrayList) {
         this.context = context;
         this.messagesAdpterArrayList = messagesAdpterArrayList;
     }
@@ -48,7 +48,7 @@ public class messages extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        message messages = messagesAdpterArrayList.get(position);
+        Message messages = messagesAdpterArrayList.get(position);
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -86,7 +86,7 @@ public class messages extends RecyclerView.Adapter {
 
     @Override
     public int getItemViewType(int position) {
-        message messages = messagesAdpterArrayList.get(position);
+        Message messages = messagesAdpterArrayList.get(position);
         if (FirebaseAuth.getInstance().getCurrentUser().getUid().equals(messages.getSenderid())) {
             return ITEM_SEND;
         } else {

@@ -1,4 +1,4 @@
-package com.liam.sealed;
+package com.liam.sealed.main;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -20,6 +20,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.liam.sealed.R;
+import com.liam.sealed.adapters.Users;
+import com.liam.sealed.modelClass.User;
 
 import java.util.ArrayList;
 
@@ -27,9 +30,9 @@ public class MainActivity extends AppCompatActivity{
 
     FirebaseAuth auth;
     RecyclerView mainUserRecyclerView;
-    UserAdpter  adapter;
+    Users adapter;
     FirebaseDatabase database;
-    ArrayList<Users> usersArrayList;
+    ArrayList<User> usersArrayList;
     ImageView imglogout, setbut, chatBut;
 
     @SuppressLint("MissingInflatedId")
@@ -54,7 +57,7 @@ public class MainActivity extends AppCompatActivity{
 
         mainUserRecyclerView = findViewById(R.id.mainUserRecyclerView);
         mainUserRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new UserAdpter(MainActivity.this,usersArrayList);
+        adapter = new Users(MainActivity.this,usersArrayList);
         mainUserRecyclerView.setAdapter(adapter);
 
 
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity{
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot: snapshot.getChildren())
                 {
-                    Users users = dataSnapshot.getValue(Users.class);
+                    User users = dataSnapshot.getValue(User.class);
                     usersArrayList.add(users);
                 }
                 adapter.notifyDataSetChanged();

@@ -1,14 +1,14 @@
 package com.liam.sealed.modelClass;
 
-    public class message {
+    public class Message {
         String message;
         String senderid;
         long timeStamp;
 
-        public message() {
+        public Message() {
         }
 
-        public message(String message, String senderid, long timeStamp) {
+        public Message(String message, String senderid, long timeStamp) {
             this.message = message;
             this.senderid = senderid;
             this.timeStamp = timeStamp;

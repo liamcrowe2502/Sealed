@@ -22,10 +22,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.liam.sealed.MainActivity;
+import com.liam.sealed.main.MainActivity;
 import com.liam.sealed.R;
-import com.liam.sealed.adapters.messages;
-import com.liam.sealed.modelClass.message;
+import com.liam.sealed.adapters.Messages;
+import com.liam.sealed.modelClass.Message;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -46,8 +46,8 @@ public class chatWindow extends AppCompatActivity {
 
     String senderRoom,reciverRoom;
     RecyclerView messageAdpter;
-    ArrayList<message> messagesArrayList;
-    messages mmessages;
+    ArrayList<Message> messagesArrayList;
+    Messages mmessages;
     ImageView backButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +70,7 @@ public class chatWindow extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);
         messageAdpter.setLayoutManager(linearLayoutManager);
-        mmessages = new messages(chatWindow.this,messagesArrayList);
+        mmessages = new Messages(chatWindow.this,messagesArrayList);
         messageAdpter.setAdapter(mmessages);
         Picasso.get().load(reciverimg).into(profile);
         reciverNName.setText(""+reciverName);
@@ -96,7 +96,7 @@ public class chatWindow extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 messagesArrayList.clear();
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
-                    message messages = dataSnapshot.getValue(message.class);
+                    Message messages = dataSnapshot.getValue(Message.class);
                     messagesArrayList.add(messages);
                 }
                 mmessages.notifyDataSetChanged();
@@ -131,7 +131,7 @@ public class chatWindow extends AppCompatActivity {
                 }
                 textmsg.setText("");
                 Date date = new Date();
-                com.liam.sealed.modelClass.message messagess = new message(message,SenderUID,date.getTime());
+                Message messagess = new Message(message,SenderUID,date.getTime());
 
                 database=FirebaseDatabase.getInstance();
                 database.getReference().child("chats")

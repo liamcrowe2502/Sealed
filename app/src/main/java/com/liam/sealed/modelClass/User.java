@@ -1,11 +1,11 @@
-package com.liam.sealed;
+package com.liam.sealed.modelClass;
 
-public class Users {
-    String profilepic,mail,userName,password,userId,lastMessage,status;
+public class User {
+    public String profilepic,mail,userName,password,userId,lastMessage,status;
 
-    public  Users(){}
+    public User(){}
 
-    public Users(String userId, String userName, String maill, String password, String profilepic, String status) {
+    public User(String userId, String userName, String maill, String password, String profilepic, String status) {
         this.userId = userId;
         this.userName = userName;
         this.mail = maill;

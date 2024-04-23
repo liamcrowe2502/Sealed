@@ -1,4 +1,4 @@
-package com.liam.sealed;
+package com.liam.sealed.main;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,6 +27,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.liam.sealed.R;
+import com.liam.sealed.modelClass.User;
 import com.squareup.picasso.Picasso;
 
 public class Setting extends AppCompatActivity {
@@ -139,7 +141,7 @@ public class Setting extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     String finalImageUri = uri.toString();
-                                    Users users = new Users(auth.getUid(), name,email,password,finalImageUri,Status);
+                                    User users = new User(auth.getUid(), name,email,password,finalImageUri,Status);
                                     reference.setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
@@ -164,7 +166,7 @@ public class Setting extends AppCompatActivity {
                         @Override
                         public void onSuccess(Uri uri) {
                             String finalImageUri = uri.toString();
-                            Users users = new Users(auth.getUid(), name,email,password,finalImageUri,Status);
+                            User users = new User(auth.getUid(), name,email,password,finalImageUri,Status);
                             reference.setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {

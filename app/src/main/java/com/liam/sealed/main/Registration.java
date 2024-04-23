@@ -1,4 +1,4 @@
-package com.liam.sealed;
+package com.liam.sealed.main;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,6 +25,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.liam.sealed.R;
+import com.liam.sealed.modelClass.User;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -113,13 +115,13 @@ public class Registration extends AppCompatActivity {
                                                     @Override
                                                     public void onSuccess(Uri uri) {
                                                         imageuri = uri.toString();
-                                                        Users users = new Users(id,namee,emaill,Password,imageuri,status);
+                                                        User users = new User(id,namee,emaill,Password,imageuri,status);
                                                         reference.setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                             @Override
                                                             public void onComplete(@NonNull Task<Void> task) {
                                                                 if (task.isSuccessful()){
                                                                     progressDialog.show();
-                                                                    Intent intent = new Intent(Registration.this,MainActivity.class);
+                                                                    Intent intent = new Intent(Registration.this, MainActivity.class);
                                                                     startActivity(intent);
                                                                     finish();
                                                                 }else {
@@ -135,7 +137,7 @@ public class Registration extends AppCompatActivity {
                                 }else {
                                     String status = "Hey I'm Using This Application";
                                     imageuri = "https://firebasestorage.googleapis.com/v0/b/sealed-8fcd7.appspot.com/o/main.png?alt=media&token=4e9f26e3-c1ea-47c7-b87d-844965bd8f04";
-                                    Users users = new Users(id,namee,emaill,Password,imageuri,status);
+                                    User users = new User(id,namee,emaill,Password,imageuri,status);
                                     reference.setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {

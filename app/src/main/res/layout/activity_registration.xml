@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registration">
+    tools:context=".main.Registration">
 
     <TextView
         android:id="@+id/textView9"
@@ -39,7 +39,7 @@
         android:fontFamily="@font/poppins_regular"
         android:gravity="center_vertical"
         android:text="Create New "
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="@dimen/_26sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -56,7 +56,7 @@
         android:fontFamily="@font/poppins_regular"
         android:gravity="center_vertical"
         android:text="Account"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="@dimen/_26sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
