@@ -26,6 +26,7 @@ import com.liam.sealed.main.MainActivity;
 import com.liam.sealed.R;
 import com.liam.sealed.adapters.Messages;
 import com.liam.sealed.modelClass.Message;
+import com.liam.sealed.utility.EncryptionHelper;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -120,6 +121,7 @@ public class chatWindow extends AppCompatActivity {
             }
         });
 
+        /*
         sendbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -151,6 +153,45 @@ public class chatWindow extends AppCompatActivity {
                                         });
                             }
                         });
+            }
+        }); */
+
+        sendbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String message = textmsg.getText().toString();
+
+                if (message.isEmpty()) {
+                    Toast.makeText(chatWindow.this, "Enter The Message First", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                try {
+                    // Encrypt the message
+                    String encryptedMessage = EncryptionHelper.encrypt(message);
+                    textmsg.setText("");
+                    Date date = new Date();
+                    Message messagess = new Message(encryptedMessage, SenderUID, date.getTime());
+
+                    // Firebase operations
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference messageRef = database.getReference().child("chats").child(senderRoom).child("messages");
+                    messageRef.push().setValue(messagess).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            // Duplicate for the receiver room
+                            database.getReference().child("chats").child(reciverRoom).child("messages")
+                                    .push().setValue(messagess).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            // Optional: Implement if needed
+                                        }
+                                    });
+                        }
+                    });
+                } catch (Exception e) {
+                    Toast.makeText(chatWindow.this, "Error encrypting message: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

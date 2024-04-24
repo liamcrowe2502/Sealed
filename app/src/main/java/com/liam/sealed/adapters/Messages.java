@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.liam.sealed.R;
 import com.liam.sealed.modelClass.Message;
+import com.liam.sealed.utility.EncryptionHelper;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -69,6 +70,7 @@ public class Messages extends RecyclerView.Adapter {
                 return false;
             }
         });
+        /*
         if (holder.getClass()==senderVierwHolder.class){
             senderVierwHolder viewHolder = (senderVierwHolder) holder;
             viewHolder.msgtxt.setText(messages.getMessage());
@@ -76,7 +78,27 @@ public class Messages extends RecyclerView.Adapter {
         }else { reciverViewHolder viewHolder = (reciverViewHolder) holder;
             viewHolder.msgtxt.setText(messages.getMessage());
             Picasso.get().load(reciverIImg).into(viewHolder.circleImageView);
+        } */
+        if (holder.getClass() == senderVierwHolder.class) {
+            senderVierwHolder viewHolder = (senderVierwHolder) holder;
+            try {
+                String decryptedMessage = EncryptionHelper.decrypt(messages.getMessage());
+                viewHolder.msgtxt.setText(decryptedMessage);
+            } catch (Exception e) {
+                viewHolder.msgtxt.setText("Error decrypting message");
+            }
+            Picasso.get().load(senderImg).into(viewHolder.circleImageView);
+        } else {
+            reciverViewHolder viewHolder = (reciverViewHolder) holder;
+            try {
+                String decryptedMessage = EncryptionHelper.decrypt(messages.getMessage());
+                viewHolder.msgtxt.setText(decryptedMessage);
+            } catch (Exception e) {
+                viewHolder.msgtxt.setText("Error decrypting message");
+            }
+            Picasso.get().load(reciverIImg).into(viewHolder.circleImageView);
         }
+
     }
 
     @Override
