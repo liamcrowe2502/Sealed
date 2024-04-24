@@ -7,7 +7,7 @@
     tools:context=".main.Registration">
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/needAccount"
         android:layout_width="152dp"
         android:layout_height="24dp"
         android:gravity="center"
@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.932" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profilerg0"
+        android:id="@+id/profilePicture"
         android:layout_width="151dp"
         android:layout_height="130dp"
         android:src="@drawable/photocamera"
@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.232" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/createNew"
         android:layout_width="@dimen/_215sdp"
         android:layout_height="@dimen/_35sdp"
         android:fontFamily="@font/poppins_regular"
@@ -50,7 +50,7 @@
         app:layout_constraintVertical_bias="0.019" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/accountText"
         android:layout_width="310dp"
         android:layout_height="41dp"
         android:fontFamily="@font/poppins_regular"
@@ -67,7 +67,7 @@
         app:layout_constraintVertical_bias="0.084" />
 
     <EditText
-        android:id="@+id/rgemail"
+        android:id="@+id/registerEmail"
         android:layout_width="260dp"
         android:layout_height="50dp"
         android:ems="10"
@@ -84,7 +84,7 @@
         app:layout_constraintVertical_bias="0.556" />
 
     <EditText
-        android:id="@+id/rgpassword"
+        android:id="@+id/registerPassword"
         android:layout_width="260dp"
         android:layout_height="50dp"
         android:ems="10"
@@ -101,7 +101,7 @@
         app:layout_constraintVertical_bias="0.664" />
 
     <EditText
-        android:id="@+id/rgrepassword"
+        android:id="@+id/regRetypePassword"
         android:layout_width="260dp"
         android:layout_height="50dp"
         android:ems="10"
@@ -132,7 +132,7 @@
         app:layout_constraintVertical_bias="0.892" />
 
     <TextView
-        android:id="@+id/loginbut"
+        android:id="@+id/registerLogin_ButtonSwitch"
         android:layout_width="@dimen/_124sdp"
         android:layout_height="24dp"
         android:gravity="center"
@@ -147,7 +147,7 @@
         app:layout_constraintVertical_bias="0.966" />
 
     <EditText
-        android:id="@+id/rgusername"
+        android:id="@+id/registerUsername"
         android:layout_width="260dp"
         android:layout_height="52dp"
         android:ems="10"

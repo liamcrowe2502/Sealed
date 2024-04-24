@@ -7,7 +7,7 @@
     tools:context=".main.Login">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/sealedLogo"
         android:layout_width="413dp"
         android:layout_height="252dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/sealed_login" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/createNew"
         android:layout_width="233dp"
         android:layout_height="127dp"
         android:fontFamily="@font/poppins_regular"
@@ -35,7 +35,7 @@
         app:layout_constraintVertical_bias="0.415" />
 
     <EditText
-        android:id="@+id/editTexLogEmail"
+        android:id="@+id/editTextEmailLogin"
         android:layout_width="@dimen/_260sdp"
         android:layout_height="@dimen/_52sdp"
         android:ems="10"
@@ -53,7 +53,7 @@
         app:layout_constraintVertical_bias="0.649" />
 
     <EditText
-        android:id="@+id/editTextLogPassword"
+        android:id="@+id/editTextPasswordLogin"
         android:layout_width="@dimen/_260sdp"
         android:layout_height="@dimen/_52sdp"
         android:ems="10"
@@ -71,7 +71,7 @@
         app:layout_constraintVertical_bias="0.778" />
 
     <Button
-        android:id="@+id/logbutton"
+        android:id="@+id/loginButton"
         android:layout_width="@dimen/_250sdp"
         android:layout_height="@dimen/_45sdp"
         android:backgroundTint="@color/black"
@@ -86,7 +86,7 @@
         app:layout_constraintVertical_bias="0.9" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/needAccount"
         android:layout_width="152dp"
         android:layout_height="24dp"
         android:gravity="center"
@@ -101,7 +101,7 @@
 
 
     <TextView
-        android:id="@+id/logsignup"
+        android:id="@+id/LoginSignUp_ButtonSwitch"
         android:layout_width="@dimen/_124sdp"
         android:layout_height="24dp"
         android:gravity="center"

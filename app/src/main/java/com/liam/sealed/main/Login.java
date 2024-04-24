@@ -37,10 +37,10 @@ public class Login extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         auth = FirebaseAuth.getInstance();
-        button = findViewById(R.id.logbutton);
-        email = findViewById(R.id.editTexLogEmail);
-        password = findViewById(R.id.editTextLogPassword);
-        logsignup = findViewById(R.id.logsignup);
+        button = findViewById(R.id.loginButton);
+        email = findViewById(R.id.editTextEmailLogin);
+        password = findViewById(R.id.editTextPasswordLogin);
+        logsignup = findViewById(R.id.LoginSignUp_ButtonSwitch);
 
         logsignup.setOnClickListener(new View.OnClickListener() {
             @Override

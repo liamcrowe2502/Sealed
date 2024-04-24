@@ -29,9 +29,9 @@ public class Splash extends AppCompatActivity {
             actionBar.hide();
         }
 
-        logo = findViewById(R.id.logoimg);
-        own1 = findViewById(R.id.ownone);
-        own2 = findViewById(R.id.owntwo);
+        logo = findViewById(R.id.logoImage);
+        own1 = findViewById(R.id.from);
+        own2 = findViewById(R.id.liamCroweText);
 
         topAnim = AnimationUtils.loadAnimation(this,R.anim.top_animation);
         bottomAnim = AnimationUtils.loadAnimation(this,R.anim.bottom_animation);

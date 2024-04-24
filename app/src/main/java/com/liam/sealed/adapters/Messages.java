@@ -122,7 +122,7 @@ public class Messages extends RecyclerView.Adapter {
         public senderVierwHolder(@NonNull View itemView) {
             super(itemView);
             circleImageView = itemView.findViewById(R.id.profilerggg);
-            msgtxt = itemView.findViewById(R.id.msgsendertyp);
+            msgtxt = itemView.findViewById(R.id.msgSenderSet);
         }
     }
     class reciverViewHolder extends RecyclerView.ViewHolder {
@@ -131,7 +131,7 @@ public class Messages extends RecyclerView.Adapter {
         public reciverViewHolder(@NonNull View itemView) {
             super(itemView);
             circleImageView = itemView.findViewById(R.id.pro);
-            msgtxt = itemView.findViewById(R.id.recivertextset);
+            msgtxt = itemView.findViewById(R.id.recieverTextSet);
         }
     }
 }

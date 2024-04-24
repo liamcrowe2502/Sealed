@@ -75,7 +75,7 @@ public class Users extends RecyclerView.Adapter<Users.viewholder> {
         TextView userstatus;
         public viewholder(@NonNull View itemView) {
             super(itemView);
-            userimg = itemView.findViewById(R.id.userimg);
+            userimg = itemView.findViewById(R.id.userImage);
             username = itemView.findViewById(R.id.username);
             userstatus = itemView.findViewById(R.id.userstatus);
         }

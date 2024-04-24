@@ -63,11 +63,11 @@ public class chatWindow extends AppCompatActivity {
         reciverimg = getIntent().getStringExtra("reciverImg");
         reciverUid = getIntent().getStringExtra("uid");
         messagesArrayList = new ArrayList<>();
-        sendbtn = findViewById(R.id.sendbtnn);
-        textmsg = findViewById(R.id.textmsg);
-        reciverNName = findViewById(R.id.recivername);
-        profile = findViewById(R.id.profileimgg);
-        messageAdpter = findViewById(R.id.msgadpter);
+        sendbtn = findViewById(R.id.sendButton);
+        textmsg = findViewById(R.id.textMessage);
+        reciverNName = findViewById(R.id.recieverName);
+        profile = findViewById(R.id.profileImage);
+        messageAdpter = findViewById(R.id.messageAdapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);
         messageAdpter.setLayoutManager(linearLayoutManager);

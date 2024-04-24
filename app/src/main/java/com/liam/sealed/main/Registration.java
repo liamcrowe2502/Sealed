@@ -34,7 +34,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class Registration extends AppCompatActivity {
     TextView loginbut;
     EditText rg_username, rg_email , rg_password, rg_repassword;
-    Button rg_signup;
+    Button reg_signup;
     CircleImageView rg_profileImg;
     FirebaseAuth auth;
     Uri imageURI;
@@ -57,13 +57,13 @@ public class Registration extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         storage = FirebaseStorage.getInstance();
         auth = FirebaseAuth.getInstance();
-        loginbut = findViewById(R.id.loginbut);
-        rg_username = findViewById(R.id.rgusername);
-        rg_email = findViewById(R.id.rgemail);
-        rg_password = findViewById(R.id.rgpassword);
-        rg_repassword = findViewById(R.id.rgrepassword);
-        rg_profileImg = findViewById(R.id.profilerg0);
-        rg_signup = findViewById(R.id.signupbutton);
+        loginbut = findViewById(R.id.registerLogin_ButtonSwitch);
+        rg_username = findViewById(R.id.registerUsername);
+        rg_email = findViewById(R.id.registerEmail);
+        rg_password = findViewById(R.id.registerPassword);
+        rg_repassword = findViewById(R.id.regRetypePassword);
+        rg_profileImg = findViewById(R.id.profilePicture);
+        reg_signup = findViewById(R.id.signupbutton);
 
 
         loginbut.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +75,7 @@ public class Registration extends AppCompatActivity {
             }
         });
 
-        rg_signup.setOnClickListener(new View.OnClickListener() {
+        reg_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String namee = rg_username.getText().toString();

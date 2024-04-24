@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity{
 
         database=FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
-        setbut = findViewById(R.id.settingBut);
-        chatBut = findViewById(R.id.chatBut);
+        setbut = findViewById(R.id.settingButton);
+        chatBut = findViewById(R.id.chatButton);
 
         DatabaseReference reference = database.getReference().child("user");
 
@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity{
         mainUserRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new Users(MainActivity.this,usersArrayList);
         mainUserRecyclerView.setAdapter(adapter);
-
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -77,7 +76,7 @@ public class MainActivity extends AppCompatActivity{
 
             }
         });
-        imglogout = findViewById(R.id.logoutimg);
+        imglogout = findViewById(R.id.logoutImage);
 
         imglogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,8 +84,8 @@ public class MainActivity extends AppCompatActivity{
                 Dialog dialog = new Dialog(MainActivity.this,R.style.dialoge);
                 dialog.setContentView(R.layout.dialog_layout);
                 Button no,yes;
-                yes = dialog.findViewById(R.id.yesbnt);
-                no = dialog.findViewById(R.id.nobnt);
+                yes = dialog.findViewById(R.id.yesButton);
+                no = dialog.findViewById(R.id.noButton);
                 yes.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

@@ -8,7 +8,7 @@
     tools:context=".chatWindows.chatWindow">
 
     <LinearLayout
-        android:id="@+id/ll1"
+        android:id="@+id/linearLayout_ChatWindow1"
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:background="@color/white"
@@ -25,7 +25,7 @@
             android:src="@drawable/backbut" />
 
         <TextView
-            android:id="@+id/recivername"
+            android:id="@+id/recieverName"
             android:layout_width="200dp"
             android:layout_height="60dp"
             android:layout_margin="@dimen/_2sdp"
@@ -37,7 +37,7 @@
             android:textSize="@dimen/_20sdp" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profileimgg"
+            android:id="@+id/profileImage"
             android:layout_width="85dp"
             android:layout_height="60dp"
             android:layout_marginTop="@dimen/_2sdp"
@@ -52,17 +52,17 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/msgadpter"
+        android:id="@+id/messageAdapter"
         android:layout_width="match_parent"
         android:layout_height="502dp"
-        android:layout_above="@id/ll2"
-        android:layout_below="@+id/ll1"
+        android:layout_above="@id/linearLayout_ChatWindow2"
+        android:layout_below="@+id/linearLayout_ChatWindow1"
         android:layout_marginTop="7dp"
         android:layout_marginBottom="-7dp"
         android:padding="@dimen/_10sdp" />
 
     <LinearLayout
-        android:id="@+id/ll2"
+        android:id="@+id/linearLayout_ChatWindow2"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_45sdp"
         android:layout_alignParentBottom="true"
@@ -83,7 +83,7 @@
             app:cardCornerRadius="@dimen/_25sdp">
 
             <EditText
-                android:id="@+id/textmsg"
+                android:id="@+id/textMessage"
                 android:layout_width="384dp"
                 android:layout_height="45dp"
                 android:layout_gravity="center"
@@ -96,7 +96,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/sendbtnn"
+            android:id="@+id/sendButton"
             android:layout_width="@dimen/_35sdp"
             android:layout_height="@dimen/_35sdp"
             android:layout_marginTop="@dimen/_5sdp"

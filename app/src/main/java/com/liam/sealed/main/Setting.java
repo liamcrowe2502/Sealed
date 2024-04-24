@@ -57,13 +57,13 @@ public class Setting extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
         storage = FirebaseStorage.getInstance();
-        setprofile = findViewById(R.id.settingprofile);
-        setname = findViewById(R.id.settingname);
-        setstatus = findViewById(R.id.settingstatus);
-        donebut = findViewById(R.id.donebutt);
+        setprofile = findViewById(R.id.settingProfile);
+        setname = findViewById(R.id.settingName);
+        setstatus = findViewById(R.id.settingStatus);
+        donebut = findViewById(R.id.doneButton);
         backButton = findViewById(R.id.backButton);
-        setbut = findViewById(R.id.settingBut);
-        chatBut = findViewById(R.id.chatBut);
+        setbut = findViewById(R.id.settingButton);
+        chatBut = findViewById(R.id.chatButton);
 
         progressDialog = new ProgressDialog(this) ;
         progressDialog.setMessage("Saing...");
